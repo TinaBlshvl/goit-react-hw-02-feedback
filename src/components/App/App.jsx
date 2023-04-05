@@ -12,7 +12,11 @@ export class App extends Component {
     bad: 0,
   };
 
-  onBtnClick = e => this.setState(prevState => ({ [e]: prevState[e] + 1 }));
+  onLeaveFeedback = e => {
+    this.setState(prevState => ({
+      [e.target.name]: prevState[e.target.name] + 1,
+    }));
+  };
 
   countTotalFeedback = () => {
     const {
@@ -40,7 +44,7 @@ export class App extends Component {
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={['good', 'neutral', 'bad']}
-            handleClick={this.onBtnClick}
+            handleClick={this.onLeaveFeedback}
           />
           {good || neutral || bad ? (
             <Statistics

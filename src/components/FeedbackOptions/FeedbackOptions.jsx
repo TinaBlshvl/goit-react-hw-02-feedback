@@ -1,5 +1,5 @@
 import css from '../FeedbackOptions/FeedbackOptions.module.css';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ options, handleClick }) => {
   return (
@@ -8,7 +8,7 @@ export const FeedbackOptions = ({ options, handleClick }) => {
         {options.map(option => (
           <li key={option.id} className={css.item}>
             <button
-              type="button"
+              type="onSubmit"
               name="option"
               className={css.btn}
               onClick={handleClick}
@@ -22,7 +22,7 @@ export const FeedbackOptions = ({ options, handleClick }) => {
   );
 };
 
-// FeedbackOptions.propTypes = {
-//   options: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
-//   handleClick: PropTypes.func.isRequired,
-// };
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onBtnClick: PropTypes.func.isRequired,
+};
