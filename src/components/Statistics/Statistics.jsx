@@ -16,7 +16,7 @@ export const Statistics = ({
         <li className={css.item}>&#10060; Bad: {bad}</li>
         <li className={css.item}>Total: {total}</li>
         <li className={css.item}>
-          Positive feedback:
+          Positive feedback:{' '}
           {isNaN(positivePercentage) ? 0 : positivePercentage} %
         </li>
       </ul>

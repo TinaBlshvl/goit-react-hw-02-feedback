@@ -6,10 +6,10 @@ export const FeedbackOptions = ({ options, handleClick }) => {
     <section>
       <ul className={css.list}>
         {options.map(option => (
-          <li key={option.id} className={css.item}>
+          <li key={option} className={css.item}>
             <button
-              type="onSubmit"
-              name="option"
+              type="button"
+              name={option}
               className={css.btn}
               onClick={handleClick}
             >
@@ -24,5 +24,5 @@ export const FeedbackOptions = ({ options, handleClick }) => {
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onBtnClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
